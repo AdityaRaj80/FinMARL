@@ -1,0 +1,31 @@
+ticker,name,sector,reason,rank_in_sector,adv_2015_musd,first_bar,missing_bars,big_moves
+AAPL,Apple Inc.,Information Technology,sector top-2,1,6191.1,2015-01-02,0,
+META,Meta Platforms,Communication Services,sector top-2,1,2398.7,2015-01-02,0,2022-02-03:-26%
+AMZN,Amazon,Consumer Discretionary,sector top-2,1,1847.3,2015-01-02,0,
+NFLX,Netflix,Communication Services,sector top-2,2,1720.4,2015-01-02,0,2022-04-20:-35%
+MSFT,Microsoft,Information Technology,sector top-2,2,1676.3,2015-01-02,0,
+GE,GE Aerospace,Industrials,sector top-2,1,1451.4,2015-01-02,0,
+BAC,Bank of America,Financials,sector top-2,1,1395.0,2015-01-02,0,
+GILD,Gilead Sciences,Health Care,sector top-2,1,1190.7,2015-01-02,0,
+XOM,ExxonMobil,Energy,sector top-2,1,1159.2,2015-01-02,0,
+JPM,JPMorgan Chase,Financials,sector top-2,2,1004.8,2015-01-02,0,
+PFE,Pfizer,Health Care,sector top-2,2,965.2,2015-01-02,0,
+CVX,Chevron Corporation,Energy,sector top-2,2,870.4,2015-01-02,0,
+BKNG,Booking Holdings,Consumer Discretionary,sector top-2,2,808.4,2015-01-02,0,
+PG,Procter & Gamble,Consumer Staples,sector top-2,1,695.8,2015-01-02,0,
+WMT,Walmart,Consumer Staples,sector top-2,2,634.4,2015-01-02,0,
+BA,Boeing,Industrials,sector top-2,2,560.5,2015-01-02,0,
+DD,DuPont,Materials,sector top-2,1,506.4,2015-01-02,0,
+FCX,Freeport-McMoRan,Materials,sector top-2,2,387.4,2015-01-02,0,"2015-08-27:+29%, 2020-03-24:+30%"
+DUK,Duke Energy,Utilities,sector top-2,1,259.7,2015-01-02,0,
+SPG,Simon Property Group,Real Estate,sector top-2,1,259.4,2015-01-02,0,"2020-03-16:-27%, 2020-11-09:+28%"
+EXC,Exelon,Utilities,sector top-2,2,240.7,2015-01-02,0,
+AMT,American Tower,Real Estate,sector top-2,2,227.5,2015-01-02,0,
+GOOGL,Alphabet Inc. (Class A),Communication Services,liquidity fill,3,1352.6,2015-01-02,0,
+C,Citigroup,Financials,liquidity fill,3,978.0,2015-01-02,0,
+INTC,Intel,Information Technology,liquidity fill,3,965.4,2015-01-02,0,2024-08-02:-26%
+T,AT&T,Communication Services,reserve,4,957.4,2015-01-02,0,
+DIS,Walt Disney Company (The),Communication Services,reserve,5,895.4,2015-01-02,0,
+WFC,Wells Fargo,Financials,reserve,4,867.6,2015-01-02,0,
+CMCSA,Comcast,Communication Services,reserve,6,823.0,2015-01-02,0,
+JNJ,Johnson & Johnson,Health Care,reserve,3,819.8,2015-01-02,0,

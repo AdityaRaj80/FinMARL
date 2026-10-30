@@ -1,0 +1,114 @@
+{
+  "news_rows": 95737,
+  "news_rows_by_source": {
+    "nasdaq": 79977,
+    "external": 15760
+  },
+  "unparseable_timestamps": 0,
+  "precision_by_source": {
+    "external": {
+      "midnight_utc": 0.9924,
+      "sub_hour": 0.0076,
+      "whole_hour": NaN
+    },
+    "nasdaq": {
+      "midnight_utc": 0.9969,
+      "sub_hour": 0.0015,
+      "whole_hour": 0.0016
+    }
+  },
+  "body_share_by_source": {
+    "external": 0.0,
+    "nasdaq": 0.8029
+  },
+  "hindsight_title_share": 0.056,
+  "url_month_mismatch_share_benzinga": 0.0009,
+  "eligible_after_price_end": 94,
+  "price_symbols": [
+    {
+      "symbol": "AAPL",
+      "first": "1980-12-12",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "AMD",
+      "first": "1980-03-17",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "AMZN",
+      "first": "1997-05-15",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "BAC",
+      "first": "1973-02-21",
+      "last": "2020-07-02"
+    },
+    {
+      "symbol": "FB",
+      "first": "2012-05-18",
+      "last": "2020-07-02"
+    },
+    {
+      "symbol": "GLD",
+      "first": "2004-11-18",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "GOOGL",
+      "first": "2004-08-19",
+      "last": "2020-04-01"
+    },
+    {
+      "symbol": "IWM",
+      "first": "2000-05-26",
+      "last": "2020-06-19"
+    },
+    {
+      "symbol": "JNJ",
+      "first": "1962-01-02",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "JPM",
+      "first": "1980-03-17",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "MSFT",
+      "first": "1986-03-13",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "NVDA",
+      "first": "1999-01-22",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "QQQ",
+      "first": "1999-03-10",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "SPY",
+      "first": "1993-01-29",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "TLT",
+      "first": "2002-07-30",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "WMT",
+      "first": "1972-08-25",
+      "last": "2023-12-28"
+    },
+    {
+      "symbol": "XOM",
+      "first": "1970-01-02",
+      "last": "2023-12-28"
+    }
+  ]
+}

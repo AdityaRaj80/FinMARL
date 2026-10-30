@@ -1,0 +1,22 @@
+# Licensed data and article text: never commit (see docs/PROJECT_STATUS.md, data rights)
+data/
+data.zip
+FNSPID_data/
+Stock_news/
+Stock_price/
+*.parquet
+*.pkl
+
+# Check tables that contain headlines, titles or URLs
+reports/data_audit/alpaca_sec_timing.csv
+reports/data_audit/sec_date_check.csv
+reports/data_audit/temporal_join_sample.csv
+reports/data_tables/news_leak_test.csv
+reports/data_tables/news_leak_review.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/

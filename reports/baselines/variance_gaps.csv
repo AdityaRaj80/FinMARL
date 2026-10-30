@@ -1,0 +1,6 @@
+model,reference,qlike_gap,lo,hi
+ewma,har_pooled,0.02071,-0.01021,0.05542
+roll_21,har_pooled,0.08085,0.0504,0.11297
+har_stock,har_pooled,0.25302,0.0582,0.53063
+ridge_vol,har_pooled,0.03519,-0.00425,0.07795
+lgbm_vol,har_pooled,-0.0079,-0.03475,0.0215

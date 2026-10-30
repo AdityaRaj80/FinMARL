@@ -1,0 +1,6 @@
+source_file,precision,rows,share
+external,midnight_utc,15640,0.9923857868020305
+external,sub_hour,120,0.007614213197969543
+nasdaq,midnight_utc,79729,0.9968991084936919
+nasdaq,sub_hour,121,0.001512934968803531
+nasdaq,whole_hour,127,0.0015879565375045326

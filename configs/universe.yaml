@@ -1,0 +1,56 @@
+# Fixed before any performance testing. Do not swap names based on backtest results.
+# Built by scripts/build_universe.py (rule in its docstring; evidence in reports/universe_selection.md):
+# S&P 500 members on 2015-12-31 -> 2 most liquid (2015 dollar volume) per GICS sector -> fill to 25 by liquidity.
+universe:
+  Communication Services: [META, NFLX, GOOGL]
+  Consumer Discretionary: [AMZN, BKNG]
+  Consumer Staples: [PG, WMT]
+  Energy: [XOM, CVX]
+  Financials: [BAC, JPM, C]
+  Health Care: [GILD, PFE]
+  Industrials: [GE, BA]
+  Information Technology: [AAPL, MSFT, INTC]
+  Materials: [DD, FCX]
+  Real Estate: [SPG, AMT]
+  Utilities: [DUK, EXC]
+
+# Used in this order only if a universe name fails a data gate; the replacement is logged, never chosen by results.
+reserves: [T, DIS, WFC, CMCSA, JNJ]
+
+benchmarks: [SPY, QQQ, IWM, TLT, GLD]
+
+# Raw news symbol -> canonical ticker (issuer level). Prices always come from the canonical ticker.
+# FB -> META (2022-06-09), PCLN -> BKNG (2018-02-27), DWDP -> DD (DowDuPont 2017-09 to 2019-06).
+# GOOG (class C) news is about the same issuer as GOOGL, but GOOG prices are never used as GOOGL.
+aliases:
+  FB: META
+  PCLN: BKNG
+  DWDP: DD
+  GOOG: GOOGL
+
+issuers:
+  META: Meta Platforms
+  NFLX: Netflix
+  GOOGL: Alphabet
+  AMZN: Amazon
+  BKNG: Booking Holdings
+  PG: Procter & Gamble
+  WMT: Walmart
+  XOM: Exxon Mobil
+  CVX: Chevron
+  BAC: Bank of America
+  JPM: JPMorgan Chase
+  C: Citigroup
+  GILD: Gilead Sciences
+  PFE: Pfizer
+  GE: General Electric
+  BA: Boeing
+  AAPL: Apple
+  MSFT: Microsoft
+  INTC: Intel
+  DD: DuPont
+  FCX: Freeport-McMoRan
+  SPG: Simon Property Group
+  AMT: American Tower
+  DUK: Duke Energy
+  EXC: Exelon

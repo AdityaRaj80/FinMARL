@@ -1,0 +1,9 @@
+,sharpe,pct_of_random
+spy_buy_hold,0.644,0.91
+equal_weight,0.617,0.84
+inverse_vol,0.665,0.945
+momentum,0.647,0.92
+ridge_pooled,0.518,0.6
+ridge_stock,0.439,0.34
+lgbm_pooled,0.453,0.365
+lgbm_xs,0.678,0.97

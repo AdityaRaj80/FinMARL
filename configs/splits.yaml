@@ -1,0 +1,35 @@
+# Chronological splits, fixed 2026-10-29 before any model is trained. Dates are NY session dates, inclusive.
+# Every period uses the same sources (yfinance prices, Alpaca/Benzinga news), so there is no source break
+# at a split boundary. FNSPID ends 2023-12, so features built from it disappear in the external period;
+# primary news features use Alpaca only (see reports/data_tables.md).
+
+calendar: XNYS            # trading sessions = SPY bar dates; 13:00 half-days still close before the 17:00 decision
+decision_time_ny: "17:00"
+execution: next_session_open   # labels and backtest both use adjusted opens
+horizon_sessions: 5            # primary label: adj_open[t+1] -> adj_open[t+6]
+aux_horizon_sessions: 1
+embargo_sessions: 6            # H + 1: drop decisions whose label window crosses a boundary
+
+data_start: 2015-01-02    # 2015 is warm-up only (lookbacks up to 252 sessions); no decisions are scored in it
+data_end: 2026-10-28      # last complete session in the frozen snapshot
+
+periods:
+  warmup:   [2015-01-02, 2015-12-31]
+  train:    [2016-01-01, 2021-12-31]
+  val:      [2022-01-01, 2022-12-31]   # model selection, early stopping, hyper-parameters
+  test:     [2023-01-01, 2023-12-31]   # frozen: run once per finished model, never used to choose anything
+  external: [2024-01-01, 2026-10-28]   # out-of-time challenge on the same sources; reported separately
+  # forward shadow (paper only) starts 2026-10-29 with live data and is never part of training
+
+# Rolling-origin folds for development inside train+val (expanding window, embargo at each boundary).
+folds:
+  - {train: [2016-01-01, 2018-12-31], val: [2019-01-01, 2019-12-31]}
+  - {train: [2016-01-01, 2019-12-31], val: [2020-01-01, 2020-12-31]}
+  - {train: [2016-01-01, 2020-12-31], val: [2021-01-01, 2021-12-31]}
+  - {train: [2016-01-01, 2021-12-31], val: [2022-01-01, 2022-12-31]}   # final fit before the test run
+
+# Known regimes to break results down by (not used for selection).
+regimes:
+  covid_crash: [2020-02-19, 2020-04-30]
+  rate_hikes: [2022-01-01, 2022-12-31]
+  ai_rally: [2023-01-01, 2024-12-31]

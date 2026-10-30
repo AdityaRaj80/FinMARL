@@ -1,0 +1,4 @@
+mu,sigma,gaussian_nll,coverage_90,pinball_avg
+zero,lgbm_vol,-1.67991,0.90089,0.00946
+train_mean,lgbm_vol,-1.67828,0.89976,0.00946
+ridge_pooled,lgbm_vol,-1.66336,0.89691,0.00955
