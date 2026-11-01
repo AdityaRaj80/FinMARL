@@ -1,0 +1,7 @@
+{
+ "gap_tft_minus_patchtst": -0.03277,
+ "lo": -0.07834,
+ "hi": -0.00036,
+ "winner": "tft",
+ "decided_by": "lower primary loss"
+}

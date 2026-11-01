@@ -6,4 +6,6 @@ yfinance==1.7.0
 duckdb==1.5.5
 scikit-learn==1.9.0
 lightgbm==4.6.0
+scipy==1.18.0
+torch==2.13.0
 pytest==9.1.1
