@@ -10,7 +10,7 @@ AEGIS (Adaptive Evidence-Gated Intelligence System) is an applied AI/ML portfoli
 
 All trading is paper trading. There are no broker connections, leverage or short positions.
 
-**Where we are:** the data foundation and the price-only baselines are finished. Next-week returns were not reliably predictable from prices, volatility was, and no active strategy clearly beat equal weight. The next step is the main forecaster.
+**Where we are:** the data foundation, the price-only baselines and the TFT vs PatchTST comparison are finished. Next-week returns were not reliably predictable from prices, volatility was, and no active strategy clearly beat equal weight. TFT won the comparison but didn't clear the full bar, so LightGBM and pooled HAR stay the default and TFT is the challenger for the news stage. Calibration and the ex-ante Sharpe are the remaining forecaster work.
 
 `plan.md` remains the reference design, but it isn't binding. Section 2.9 lists where the project has deliberately moved away from it.
 
@@ -26,7 +26,7 @@ All trading is paper trading. There are no broker connections, leverage or short
 | Splits | — | **Done** | [splits.yaml](../configs/splits.yaml) |
 | Canonical tables | — | **Done** | [data_tables.md](../reports/data_tables.md) |
 | Price-only baselines | B0 | **Done** | [baselines.md](../reports/baselines.md) |
-| Main forecaster | B0 | **Next**; B0 stays open until this is compared with the bar | — |
+| Main forecaster | B0 | **Compared, bar not cleared**; TFT passes volatility and distribution, fails return and strategy. Calibration open | [forecasters.md](../reports/forecasters.md) |
 | News value | N0 | Not started | — |
 | RAG reliability | R0 | Not started | — |
 | MARL value | M0 | Not started | — |
@@ -548,13 +548,13 @@ Today `src/aegis/` is a flat package with data access, features, splits, backtes
 
 Results and the bar for later models are in [baselines.md](../reports/baselines.md).
 
-### Step 2: Main forecaster (gate B0): next
+### Step 2: Main forecaster (gate B0): compared, calibration open
 
-1. Build the dual-head model and test it on 2 stocks, then all 25.
-2. Choose PatchTST or TFT on validation data, and stop using the other.
-3. Calibrate it and compute the expected Sharpe.
+1. Done: build the dual-head model and test it on 2 stocks, then all 25.
+2. Done: choose PatchTST or TFT on validation data, and stop using the other. TFT won and PatchTST is dropped.
+3. Open: calibrate it and compute the expected Sharpe. Coverage fell to 84.5% in 2022, so this matters.
 
-**Done when:** it is scored against [the bar](../reports/baselines.md#the-bar-for-later-models). If it doesn't clear it, the simpler model stays the default.
+**Done when:** it is scored against [the bar](../reports/baselines.md#the-bar-for-later-models). If it doesn't clear it, the simpler model stays the default. **Result:** TFT didn't clear the full bar, so LightGBM and pooled HAR stay the default. Details are in [forecasters.md](../reports/forecasters.md).
 
 ### Step 3: News features (gate N0)
 

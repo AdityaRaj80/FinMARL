@@ -1,0 +1,39 @@
+# TFT vs PatchTST comparison. Fixed 2026-11-01, before either model was run. Do not edit after seeing results.
+# Development folds only (configs/splits.yaml). Only the winner ever runs on the 2023 test year.
+
+shared:
+  lookback_sessions: 60
+  horizon_sessions: 5
+  batch_size: 128
+  max_epochs: 30
+  patience: 5
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  variance_loss_weight: 1.0   # loss = Student-t NLL of the 5-day return + weight * QLIKE of 5-day variance
+  seeds: [0, 1, 2]
+  early_stop_sessions: 252    # last year of each fold's training window, purged, never the fold's scoring year
+
+# Each model gets the same budget: three configurations. On each fold the configuration with the best
+# early-stopping loss (seed 0) is kept, then rerun with the remaining seeds. Fold scores never pick it.
+models:
+  tft:
+    - {hidden: 32, heads: 4, dropout: 0.1}
+    - {hidden: 64, heads: 4, dropout: 0.1}
+    - {hidden: 64, heads: 4, dropout: 0.3}
+  patchtst:
+    - {hidden: 32, heads: 4, dropout: 0.1, patch: 10, stride: 5, layers: 2}
+    - {hidden: 64, heads: 4, dropout: 0.1, patch: 10, stride: 5, layers: 2}
+    - {hidden: 64, heads: 4, dropout: 0.3, patch: 10, stride: 5, layers: 2}
+
+selection:
+  # Scored on the three-seed ensemble over the 2019-2022 scored rows.
+  primary_loss: daily mean of Student-t return NLL + QLIKE of 5-day variance
+  winner: lower primary loss, if the 95% block-bootstrap interval of the paired daily gap excludes zero
+  tie_break: tft        # interval includes zero: TFT, because it takes news covariates more naturally
+  fallback: if neither clears the bar in reports/baselines.md, LightGBM and pooled HAR stay the default
+
+# Strategies reported for each model; the first is the bar's weekly top-8 rule.
+strategies:
+  - top8_mu: 8 highest forecast returns, weekly
+  - inverse_sigma: weights proportional to 1 / forecast volatility, monthly

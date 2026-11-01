@@ -1,0 +1,5 @@
+model,reference,qlike_gap,lo,hi
+tft,har_pooled,-0.02207,-0.05524,0.00783
+tft,lgbm_vol,-0.01417,-0.05868,0.01665
+patchtst,har_pooled,0.00214,-0.01908,0.02545
+patchtst,lgbm_vol,0.01005,-0.01692,0.03313

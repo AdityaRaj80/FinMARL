@@ -1,0 +1,13 @@
+,tft,patchtst
+return_ic_gt_0.02_t_gt_2,False,False
+return_ic_above_shuffled_control,True,False
+return_r2_gt_0,True,False
+qlike_lt_0.50,True,False
+beats_har_folds,4,2
+beats_har_2020,True,False
+nll_lt_-1.68,True,True
+coverage_88_92,True,True
+top8_gap_above_0,False,False
+top8_ahead_at_10bps,False,False
+top8_above_random_975,True,False
+inverse_sigma_gap_above_0,False,False

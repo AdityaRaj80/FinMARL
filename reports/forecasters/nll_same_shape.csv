@@ -1,0 +1,5 @@
+variance_forecast,gaussian_nll,student_t6_nll
+pooled HAR,-1.6788,-1.7368
+LightGBM,-1.6799,-1.739
+TFT,-1.6876,-1.7374
+PatchTST,-1.6746,-1.7308
